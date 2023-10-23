@@ -563,6 +563,15 @@ Item {
                 onClicked:          kmlOrSHPLoadDialog.openForLoad()
                 visible:            !mapPolygon.traceMode
             }
+
+            QGCButton{
+                _horizontalPadding: 0
+                text:               qsTr("AR Mode...")
+                onClicked: {
+                    var myModeL = Qt.createComponent("../../src/MissionManager/myModeView.qml");
+                    var myModelWin = myModeL.createObject(mainWindow);
+                }
+            }
         }
     }
 
